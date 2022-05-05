@@ -14,6 +14,11 @@ import redis.clients.jedis.Jedis;
  */
 public class JedisDemo1 {
     public static void main(String[] args) {
-        Jedis jedis = new Jedis();
+        Jedis jedis = new Jedis("162.14.78.166",6379);
+        jedis.auth("201311");  
+        String pong = jedis.ping();
+        System.out.println(pong);
+        
+        jedis.close();
     }
 }
