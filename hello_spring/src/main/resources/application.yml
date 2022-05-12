@@ -1,0 +1,9 @@
+server:
+  port: 8888
+spring:
+  # 数据库配置
+  datasource:
+    url: jdbc:mysql://162.14.78.166:3306/my_demo_db?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 201311
+    driver-class-name: com.mysql.cj.jdbc.Driver
