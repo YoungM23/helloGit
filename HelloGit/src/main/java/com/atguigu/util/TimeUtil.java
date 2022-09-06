@@ -14,11 +14,11 @@ public class TimeUtil {
     public static String timeToStr(Long time){
         Long day =time / (24 * 60 * 60 * 1000);
         Long hours = time / ((60 * 60 * 1000)) % 24;
-        Long min =time / (1000) % 60;
-        Long second = time / (60 * 1000) % 60;
+        Long min =time / (60 * 1000) % 60;
+//        Long second = time / (1000) % 60;
 //        Long msec = dealTime % 1000;
 
-        String timeStr =day + "天" + hours + "小时" + min + "分钟" + second + "秒";
+        String timeStr =day + "天" + hours + "小时" + min + "分钟" ;
         return timeStr;
 //        System.out.println(day + "天" + hours + "小时" + min + "分钟" + second + "秒" + msec + "毫秒");
     }  
