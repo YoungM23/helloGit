@@ -1,6 +1,6 @@
 package com.atguigu.lambda;
 
-import com.sun.tools.corba.se.idl.InterfaceGen;
+
 import org.junit.jupiter.api.Test;
 
 import java.util.Comparator;
