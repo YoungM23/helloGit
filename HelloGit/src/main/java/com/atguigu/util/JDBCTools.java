@@ -79,4 +79,53 @@ public class JDBCTools {
             }
         }
     }
+
+    /**
+     * 查询demo
+     */
+    private void demoQueryTest(){
+        PreparedStatement statement = null ;
+        Connection conn = null;
+        ResultSet rs = null;
+        try {
+            
+            String sql = "SELECT orderId,pendingTitle,senderId,senderName,receiverId,pendingUrl,startTime  FROM t_hr_task_view WHERE pendingStatus=0 AND receiverId = ?;";
+
+            statement = conn.prepareStatement(sql);
+            statement.setString(1, "23423");
+
+            rs = statement.executeQuery();
+
+            //结果集循环遍历结果
+            while (rs.next()){
+                String taskId = rs.getString(1);//结果的第一个字段值
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 插入数据demo
+     */
+    private void insertDemoTest(){
+        PreparedStatement statement = null ;
+        Connection conn = null;
+        ResultSet rs = null;
+        try {
+
+            String insertMidOaType = "INSERT INTO d_mid_oa_type (id,oa_type_name,fond_code) VALUES (?,?,?)";//OA类型表
+
+            statement = conn.prepareStatement(insertMidOaType);
+            statement.setString(1, "");
+            statement.setString(2, "");
+            statement.setString(3, "");
+            statement.execute();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+    }
 }
